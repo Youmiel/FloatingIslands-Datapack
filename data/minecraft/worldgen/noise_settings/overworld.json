@@ -7,11 +7,14 @@
   "disable_mob_generation": false,
   "aquifers_enabled": false,
   "default_fluid":  {
+    "Properties": {
+      "level": "0"
+    },
     "Name": "minecraft:air"
   },
   "bedrock_roof_position": -2147483648,
   "bedrock_floor_position": -2147483648,
-  "sea_level": 0,
+  "sea_level": 63,
   "structures": {
     "stronghold": {
       "distance": 32,
@@ -138,6 +141,6 @@
     }
   },
   "default_block": {
-    "Name": "minecraft:netherrack"
+    "Name": "minecraft:stone"
   }
 }

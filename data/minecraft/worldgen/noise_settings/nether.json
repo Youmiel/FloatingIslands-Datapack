@@ -7,20 +7,12 @@
   "disable_mob_generation": false,
   "aquifers_enabled": false,
   "default_fluid":  {
-    "Properties": {
-      "level": "0"
-    },
-    "Name": "minecraft:water"
+    "Name": "minecraft:air"
   },
   "bedrock_roof_position": -2147483648,
   "bedrock_floor_position": -2147483648,
-  "sea_level": 0,
+  "sea_level": 32,
   "structures": {
-    "stronghold": {
-      "distance": 32,
-      "spread": 3,
-      "count": 128
-    },
     "structures": {      
       "minecraft:pillager_outpost": {
         "spacing": 32,
@@ -141,6 +133,6 @@
     }
   },
   "default_block": {
-    "Name": "minecraft:stone"
+    "Name": "minecraft:netherrack"
   }
 }
