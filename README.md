@@ -1,13 +1,14 @@
-# FloatingIslands1.17-Datapack
+# FloatingIslands1.18-Datapack
 - A minecraft datapack that creates floating islands in overworld and the nether.
-- Terrain noise in `overworld` and `the nether` is similar to `the end`, but sightly changed
-  - Overworld sea level has changed to 32 for better vegetation on overworld islands
-- End gateways are distributed randomly in overworld and the nether, targeting (0,0)
+- Terrain noise in `the nether` is similar to `the end`, but sightly changed
+  - Nether terrain surface is sightly rougher than `the end`
+- Overworld terrain noise has completely rewroted to match 1.18 world height
+- End gateways are distributed randomly in `overworld` and `the nether`, targeting (0,0)
   - Below are the biomes that end gateways may generate:
     - deep_ocean
     - desert
     - forest
-    - mountains
+    - windswept_hills(used to be minecraft:mountains in 1.18-)
     - ocean
     - plains
     - savanna
@@ -19,4 +20,4 @@
     - end_highlands(*vanilla datapack*)
 --------------------------------
 # Usage
-Load it with 1.17.x Minecraft before world generation, and enjoy.
+Load it with 1.18 or 1.18.1 Minecraft before world generation, and enjoy.

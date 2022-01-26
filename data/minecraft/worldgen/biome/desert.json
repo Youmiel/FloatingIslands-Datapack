@@ -1,5 +1,4 @@
 {
-  "scale": 0.05,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -12,52 +11,67 @@
     "water_color": 4159204,
     "water_fog_color": 329011
   },
-  "surface_builder": "minecraft:desert",
   "carvers": {
     "air": [
       "minecraft:cave",
+      "minecraft:cave_extra_underground",
       "minecraft:canyon"
     ]
   },
   "features": [
     [],
     [
-      "minecraft:lake_lava"
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
     ],
     [
       "minecraft:amethyst_geode"
     ],
     [
-      "minecraft:fossil",
-      "minecraft:monster_room"
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower",
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
       "minecraft:desert_well",
-      "minecraft:end_gateway_overworld"
+      "floating_island:end_gateway_return_overworld"
     ],
     [],
     [
       "minecraft:ore_dirt",
       "minecraft:ore_gravel",
-      "minecraft:ore_granite",
-      "minecraft:ore_diorite",
-      "minecraft:ore_andesite",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
       "minecraft:ore_tuff",
-      "minecraft:ore_deepslate",
-      "minecraft:ore_coal",
-      "minecraft:ore_iron",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
       "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
       "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
       "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
+      "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
+    [],
     [
-      "minecraft:rare_dripstone_cluster",
-      "minecraft:rare_small_dripstone"
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
@@ -68,21 +82,11 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_desert",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_cactus_desert",
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:patch_cactus_desert"
     ],
     [
       "minecraft:freeze_top_layer"
     ]
-  ],
-  "starts": [
-    "minecraft:village_desert",
-    "minecraft:pillager_outpost",
-    "minecraft:desert_pyramid",
-    "minecraft:mineshaft",
-    "minecraft:stronghold",
-    "minecraft:ruined_portal_desert"
   ],
   "spawners": {
     "monster": [
@@ -157,15 +161,10 @@
         "maxCount": 8
       }
     ],
+    "axolotls": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:axolotl",
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
@@ -176,10 +175,8 @@
     "misc": []
   },
   "spawn_costs": {},
-  "player_spawn_friendly": false,
   "precipitation": "none",
   "temperature": 2.0,
   "downfall": 0.0,
-  "category": "desert",
-  "depth": 0.125
+  "category": "desert"
 }

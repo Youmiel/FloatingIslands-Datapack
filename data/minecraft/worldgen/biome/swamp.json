@@ -1,5 +1,4 @@
 {
-  "scale": 0.1,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -14,50 +13,64 @@
     "water_color": 6388580,
     "water_fog_color": 2302743
   },
-  "surface_builder": "minecraft:swamp",
   "carvers": {
     "air": [
       "minecraft:cave",
+      "minecraft:cave_extra_underground",
       "minecraft:canyon"
     ]
   },
   "features": [
     [],
     [
-      "minecraft:lake_water",
-      "minecraft:lake_lava"
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
     ],
     [
       "minecraft:amethyst_geode"
     ],
     [
-      "minecraft:fossil",
-      "minecraft:monster_room"
+      "minecraft:fossil_upper",
+      "minecraft:fossil_lower",
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
-      "minecraft:end_gateway_overworld"
+      "floating_island:end_gateway_return_overworld"
     ],
     [],
     [
       "minecraft:ore_dirt",
       "minecraft:ore_gravel",
-      "minecraft:ore_granite",
-      "minecraft:ore_diorite",
-      "minecraft:ore_andesite",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
       "minecraft:ore_tuff",
-      "minecraft:ore_deepslate",
-      "minecraft:ore_coal",
-      "minecraft:ore_iron",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
       "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
       "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
       "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
+      "minecraft:underwater_magma",
       "minecraft:disk_clay"
     ],
+    [],
     [
-      "minecraft:rare_dripstone_cluster",
-      "minecraft:rare_small_dripstone"
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
@@ -65,25 +78,18 @@
       "minecraft:flower_swamp",
       "minecraft:patch_grass_normal",
       "minecraft:patch_dead_bush",
-      "minecraft:patch_waterlilly",
+      "minecraft:patch_waterlily",
       "minecraft:brown_mushroom_swamp",
       "minecraft:red_mushroom_swamp",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_swamp",
       "minecraft:patch_pumpkin",
-      "minecraft:spring_water",
-      "minecraft:spring_lava",
       "minecraft:seagrass_swamp"
     ],
     [
       "minecraft:freeze_top_layer"
     ]
-  ],
-  "starts": [
-    "minecraft:swamp_hut",
-    "minecraft:mineshaft",
-    "minecraft:ruined_portal_swamp"
   ],
   "spawners": {
     "monster": [
@@ -176,15 +182,10 @@
         "maxCount": 8
       }
     ],
+    "axolotls": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:axolotl",
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
@@ -195,10 +196,8 @@
     "misc": []
   },
   "spawn_costs": {},
-  "player_spawn_friendly": false,
   "precipitation": "rain",
   "temperature": 0.8,
   "downfall": 0.9,
-  "category": "swamp",
-  "depth": -0.2
+  "category": "swamp"
 }

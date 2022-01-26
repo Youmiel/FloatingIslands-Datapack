@@ -1,5 +1,4 @@
 {
-  "scale": 0.2,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.basalt_deltas.mood",
@@ -27,9 +26,8 @@
     "sky_color": 7254527,
     "fog_color": 6840176,
     "water_color": 4159204,
-    "water_fog_color": 4341314
+    "water_fog_color": 329011
   },
-  "surface_builder": "minecraft:basalt_deltas",
   "carvers": {
     "air": [
       "minecraft:nether_cave"
@@ -44,7 +42,7 @@
       "minecraft:delta",
       "minecraft:small_basalt_columns",
       "minecraft:large_basalt_columns",
-      "minecraft:end_gateway_nether"
+      "floating_island:end_gateway_return_nether"
     ],
     [],
     [],
@@ -62,16 +60,9 @@
       "minecraft:spring_closed_double",
       "minecraft:ore_gold_deltas",
       "minecraft:ore_quartz_deltas",
-      "minecraft:ore_debris_large",
+      "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small"
-    ],
-    [
-      "minecraft:spring_lava_double"
     ]
-  ],
-  "starts": [
-    "minecraft:ruined_portal_nether",
-    "minecraft:fortress"
   ],
   "spawners": {
     "monster": [
@@ -97,16 +88,15 @@
       }
     ],
     "ambient": [],
+    "axolotls": [],
     "underground_water_creature": [],
     "water_creature": [],
     "water_ambient": [],
     "misc": []
   },
   "spawn_costs": {},
-  "player_spawn_friendly": false,
   "precipitation": "none",
   "temperature": 2.0,
   "downfall": 0.0,
-  "category": "nether",
-  "depth": 0.1
+  "category": "nether"
 }

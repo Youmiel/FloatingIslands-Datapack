@@ -1,5 +1,4 @@
 {
-  "scale": 0.2,
   "effects": {
     "mood_sound": {
       "sound": "minecraft:ambient.soul_sand_valley.mood",
@@ -29,7 +28,6 @@
     "water_color": 4159204,
     "water_fog_color": 329011
   },
-  "surface_builder": "minecraft:soul_sand_valley",
   "carvers": {
     "air": [
       "minecraft:nether_cave"
@@ -43,17 +41,17 @@
     ],
     [],
     [
-      "minecraft:end_gateway_nether"
+      "floating_island:end_gateway_return_nether"
     ],
     [],
     [],
     [
       "minecraft:spring_open",
+      "minecraft:patch_fire",
+      "minecraft:patch_soul_fire",
       "minecraft:glowstone_extra",
       "minecraft:glowstone",
       "minecraft:patch_crimson_roots",
-      "minecraft:patch_fire",
-      "minecraft:patch_soul_fire",
       "minecraft:ore_magma",
       "minecraft:spring_closed",
       "minecraft:ore_soul_sand",
@@ -61,18 +59,13 @@
       "minecraft:ore_blackstone",
       "minecraft:ore_gold_nether",
       "minecraft:ore_quartz_nether",
-      "minecraft:ore_debris_large",
+      "minecraft:ore_ancient_debris_large",
       "minecraft:ore_debris_small"
     ],
+    [],
     [
       "minecraft:spring_lava"
     ]
-  ],
-  "starts": [
-    "minecraft:fortress",
-    "minecraft:nether_fossil",
-    "minecraft:ruined_portal_nether",
-    "minecraft:bastion_remnant"
   ],
   "spawners": {
     "monster": [
@@ -104,6 +97,7 @@
       }
     ],
     "ambient": [],
+    "axolotls": [],
     "underground_water_creature": [],
     "water_creature": [],
     "water_ambient": [],
@@ -127,10 +121,8 @@
       "charge": 0.7
     }
   },
-  "player_spawn_friendly": false,
   "precipitation": "none",
   "temperature": 2.0,
   "downfall": 0.0,
-  "category": "nether",
-  "depth": 0.1
+  "category": "nether"
 }
