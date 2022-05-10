@@ -20,4 +20,4 @@
     - end_highlands(*vanilla datapack*)
 --------------------------------
 # Usage
-Load it with 1.18 or 1.18.1 Minecraft before world generation, and enjoy.
+Load it with 1.18.2(only) Minecraft before world generation, and enjoy.
