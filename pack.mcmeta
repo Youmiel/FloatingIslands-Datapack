@@ -1,7 +1,7 @@
 {
   "pack": {
-    "version":"1.1.0",
-    "pack_format": 7,
+    "version":"1.2.0",
+    "pack_format": 6,
     "description": [
       {
         "text": "FloatingIslands",

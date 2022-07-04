@@ -27,9 +27,7 @@
       "minecraft:lake_water",
       "minecraft:lake_lava"
     ],
-    [
-      "minecraft:amethyst_geode"
-    ],
+    [],
     [
       "minecraft:fossil",
       "minecraft:monster_room"
@@ -44,24 +42,17 @@
       "minecraft:ore_granite",
       "minecraft:ore_diorite",
       "minecraft:ore_andesite",
-      "minecraft:ore_tuff",
-      "minecraft:ore_deepslate",
       "minecraft:ore_coal",
       "minecraft:ore_iron",
       "minecraft:ore_gold",
       "minecraft:ore_redstone",
       "minecraft:ore_diamond",
       "minecraft:ore_lapis",
-      "minecraft:ore_copper",
       "minecraft:disk_clay"
     ],
+    [],
     [
-      "minecraft:rare_dripstone_cluster",
-      "minecraft:rare_small_dripstone"
-    ],
-    [
-      "minecraft:glow_lichen",
-      "minecraft:trees_swamp",
+      "minecraft:swamp_tree",
       "minecraft:flower_swamp",
       "minecraft:patch_grass_normal",
       "minecraft:patch_dead_bush",
@@ -174,20 +165,6 @@
         "weight": 10,
         "minCount": 8,
         "maxCount": 8
-      }
-    ],
-    "underground_water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:axolotl",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 6
       }
     ],
     "water_creature": [],
