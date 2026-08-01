@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:add",
+  "argument1": {
+    "type": "minecraft:cache_2d",
+    "argument": {
+      "type": "minecraft:end_islands"
+    }
+  },
+  "argument2": {
+    "type": "minecraft:clamp",
+    "input": "minecraft:overworld/base_3d_noise_override",
+    "min": -0.5,
+    "max": 0.5
+  }
+}

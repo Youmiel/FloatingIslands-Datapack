@@ -18,6 +18,7 @@ MC_1_20_1 = {'path': '1_20_1/', 'name': 'FloatingIslands-Datapack_v{version}_1.2
 MC_1_20_4 = {'path': '1_20_4/', 'name': 'FloatingIslands-Datapack_v{version}_1.20.4', 'version': '3.3.1'}
 MC_1_20_6 = {'path': '1_20_6/', 'name': 'FloatingIslands-Datapack_v{version}_1.20.6', 'version': '3.4.1'}
 MC_1_21 = {'path': '1_21/', 'name': 'FloatingIslands-Datapack_v{version}_1.21', 'version': '3.5.0'}
+MC_26_2 = {'path': '26_2/', 'name': 'FloatingIslands-Datapack_v{version}_26.2', 'version': '4.0.0-beta.1'}
 
 
 def __collect_constant() -> dict:

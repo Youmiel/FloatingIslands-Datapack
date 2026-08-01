@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:plains",
+    "minecraft:forest",
+    "minecraft:desert",
+    "minecraft:savanna",
+    "minecraft:swamp",
+    "minecraft:taiga",
+    "minecraft:windswept_hills",
+    "minecraft:ocean",
+    "minecraft:deep_ocean"
+  ]
+}

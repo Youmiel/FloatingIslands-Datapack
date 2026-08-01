@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1943672101,
+    "separation": 10,
+    "spacing": 20
+  },
+  "structures": [
+    {
+      "structure": "floating_island:return_gateway_overworld",
+      "weight": 1
+    }
+  ]
+}

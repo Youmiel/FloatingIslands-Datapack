@@ -1,0 +1,14 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 1943672102,
+    "separation": 16,
+    "spacing": 32
+  },
+  "structures": [
+    {
+      "structure": "floating_island:return_gateway_nether",
+      "weight": 1
+    }
+  ]
+}
