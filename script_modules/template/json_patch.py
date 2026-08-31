@@ -4,7 +4,7 @@ import typing as ty
 TYPE = 'json'
 
 def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
-     -> ty.Union[ty.Tuple[str, Path], ty.List[ty.Tuple[str, Path]], None]:
+     -> ty.Union[ty.Tuple[str, Path, Path], ty.List[ty.Tuple[str, Path, Path]], None]:
     '''
     Provides the target resource file(s) to patch generator.
     Due to the generation order, this only allows reference to 
@@ -61,7 +61,7 @@ def process_single(content: ty.Tuple[Path, ty.Dict]) -> ty.Tuple[Path, ty.Dict]:
 
 def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple[Path, ty.Dict]]:
     '''
-    Processes the content from a single file.
+    Processes the content from multiple files.
 
     args:
     - content: list of (new_path, dict_content): new_path is the path to the generated file, \

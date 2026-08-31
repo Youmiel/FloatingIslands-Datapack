@@ -35,7 +35,7 @@ def part_match(path_part: str) -> ty.Callable[[str], bool]:
     return match_function
 
        
-def scan_folder(start_path: str, max_recursion: int = 15, log: bool = False, file_predicate: ty.Callable[[str], bool] = always_true) -> ty.List[str]:
+def scan_folder(start_path: ty.Union[str, Path], max_recursion: int = 15, log: bool = False, file_predicate: ty.Callable[[str], bool] = always_true) -> ty.List[str]:
     '''
     args:
     - start_path: 

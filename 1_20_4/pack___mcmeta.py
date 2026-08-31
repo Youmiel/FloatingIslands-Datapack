@@ -9,7 +9,7 @@ SUPPORTED = {"min_inclusive": 16, "max_inclusive": 26}
 version_cache = '0.0.0'
 
 def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
-        -> ty.Union[ty.Tuple[str, Path], ty.List[ty.Tuple[str, Path]], None]:
+        -> ty.Union[ty.Tuple[str, Path, Path], ty.List[ty.Tuple[str, Path, Path]], None]:
     file_name = patch_path.with_suffix('').with_name(patch_path.stem.replace('___','.'))
     version_cache = patch_version_config['version']
 

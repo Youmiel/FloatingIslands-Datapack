@@ -1,12 +1,12 @@
-import os
-import shutil
 import sys
-from script_modules import file_util
-
 sys.dont_write_bytecode = True
 
-EXCLUDE_SUB_FOLDER = ['include', 'lib', 'scripts', '.git'
-                      'build']
+import os
+import shutil
+from script_modules import file_util
+
+
+EXCLUDE_SUB_FOLDER = ['include', 'lib', 'scripts', '.git', 'build']
 
 if __name__ == '__main__':
     cache_path_predicate = file_util.part_match(path_part='__pycache__')
