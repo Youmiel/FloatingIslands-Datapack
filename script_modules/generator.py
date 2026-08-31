@@ -54,32 +54,43 @@ def collect_json(version_key: str, source: Path, patch_module: ModuleType, res_m
     return io_util.read_json_dict(source_full_path, charset)
 
 
-def patch_json(rel_patch_path: Path, patch_module: ModuleType, res_manager: VersionResourceManager): 
-    file_ref = patch_module.reference_file(rel_patch_path, res_manager.get_current_version_config())
-    if isinstance(file_ref, tuple): # single file
-        version_key, relative_source, target_path_o = file_ref
-        t_source_content = (target_path_o, collect_json(version_key, relative_source, patch_module, res_manager))
-
-        t_modified_content: ty.Tuple[Path, ty.Dict[str, ty.Any]] = patch_module.process_single(t_source_content)
-
-        target_path_m, dict_content = t_modified_content
-        full_target_path = res_manager.get_current_build_version_root().joinpath(target_path_m)
-        os.makedirs(full_target_path.parent, exist_ok=True)
-        io_util.write_json_dict(t_modified_content[1], full_target_path)
-    elif isinstance(file_ref, list): # multi-file
-        lt_source_content = []
-        for version_key, relative_source, target_path_o in file_ref:
-            lt_source_content.append(
-                (target_path_o, collect_json(version_key, relative_source, patch_module, res_manager)))
-
-        lt_modified_content: ty.Tuple[Path, ty.Dict[str, ty.Any]] = patch_module.process_multi(lt_source_content)
-
-        for target_path_m, dict_content in lt_modified_content:
-            full_target_path = res_manager.get_current_build_version_root().joinpath(target_path_m)
-            os.makedirs(full_target_path.parent, exist_ok=True)
-            io_util.write_json_dict(dict_content, full_target_path)
+def patch_json(rel_patch_path: Path, patch_module: ModuleType, res_manager: VersionResourceManager):
+    raw_ref = patch_module.reference_file(rel_patch_path, res_manager.get_current_version_config())
+    file_ref: ty.List[ty.Tuple[str, Path, Path]] = []
+    if isinstance(raw_ref, tuple): # single file
+        file_ref = [raw_ref]
+    elif isinstance(raw_ref, list): # multi-file
+        file_ref = raw_ref
     else: # None or other, ingore
         pass
+
+    content_list: ty.List[ty.Tuple[Path, ty.Dict[str, ty.Any]]] = []
+    for version_key, relative_source, target_path_o in file_ref:
+        # to detect path type, we must get full path 
+        source_full_path = get_source_full_path(version_key, relative_source, res_manager)
+        if source_full_path.is_file():
+            content_list.append(
+                (target_path_o, collect_json(version_key, relative_source, patch_module, res_manager)))
+        elif source_full_path.is_dir():
+            for sub_path in sorted(source_full_path.glob('*.json')):
+                if sub_path.is_file():
+                    relative_source_file = relative_source / sub_path.name
+                    target_file = target_path_o / sub_path.name
+                    content_list.append(
+                        (target_file, collect_json(version_key, relative_source_file, patch_module, res_manager)))
+        else: # None or other, ingore
+            pass
+
+    modified_contents: ty.List[ty.Tuple[Path, ty.Dict]] = []
+    if len(content_list) == 1:
+        modified_contents = [patch_module.process_single(content_list[0])]
+    elif len(content_list) > 1:
+        modified_contents = patch_module.process_multi(content_list)
+        
+    for target_path_m, dict_content in modified_contents:
+        full_target_path = res_manager.get_current_build_version_root().joinpath(target_path_m)
+        os.makedirs(full_target_path.parent, exist_ok=True)
+        io_util.write_json_dict(dict_content, full_target_path)
 
 
 def process_patch(source_version_root: Path, patch_strpath: str, res_manager: VersionResourceManager):

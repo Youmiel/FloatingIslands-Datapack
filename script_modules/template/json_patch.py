@@ -16,8 +16,9 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
 
     returns:
     - (version_id, relative_path, new_path): version_id is the constant names in build_settings.py. \
-        relative_path is the relative path to the target resource in build dir. new_path is the path \
-        to generated result.
+        relative_path is the relative path to a source file or directory. A source directory expands \
+        to its direct .json files, which are written under new_path with the same filenames. One \
+        collected file is passed to process_single; multiple files are passed to process_multi.
     - list of (version_id, relative_path, new_path): the same as above.
     - None: references nothing, the patch will be ignored.
     '''
@@ -41,6 +42,15 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
             ('MC_1_16_X', patch_path.parent / 'example2.json', patch_path.parent / 'example2.json'),
             ('COMMON', patch_path.parent / 'example3.json', patch_path.parent / 'example3.json'),
         ]
+
+    # reference to every JSON file in a directory
+    return ('COMMON', Path('some/source_directory'), patch_path.parent / 'some/target_directory')
+    
+    # more cursed one
+    return [
+        ('MC_1_16_X', file_name, file_name),
+        ('COMMON', Path('some/source_directory'), patch_path.parent / 'some/target_directory'),
+    ]
     '''
 
     # reference to nothing
