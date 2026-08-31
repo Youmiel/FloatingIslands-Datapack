@@ -103,8 +103,7 @@
     }
   },
   "noise": {
-    "island_noise_override": true,
-    "density_factor": 0.1,
+    "density_factor": 0.0,
     "density_offset": 0.0,
     "simplex_surface_noise": true,
     "bottom_slide": {
@@ -122,15 +121,18 @@
       "y_factor": 160.0
     },
     "top_slide": {
-      "target": -800,
-      "size": 32,
-      "offset": -14
+      "target": -3000,
+      "size": 64,
+      "offset": -46
     }
   },
   "default_block": {
     "Name": "minecraft:stone"
   },
   "default_fluid": {
-    "Name": "minecraft:air"
+    "Properties": {
+      "level": "0"
+    },
+    "Name": "minecraft:water"
   }
 }
