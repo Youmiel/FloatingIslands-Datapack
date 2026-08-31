@@ -61,7 +61,7 @@ BIOME_NAMES = [
 def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
      -> ty.Union[ty.Tuple[str, Path, Path], ty.List[ty.Tuple[str, Path, Path]], None]:
 
-    path_source_common = Path('vanilla_biome/1_19_4_overworld')
+    path_source_common = Path('vanilla_biomes/1_19_4_overworld')
     path_target_common = patch_path.parent / 'worldgen' / 'biome'
     
     process_files = []

@@ -61,7 +61,7 @@ BIOME_NAMES = [
 def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
      -> ty.Union[ty.Tuple[str, Path, Path], ty.List[ty.Tuple[str, Path, Path]], None]:
 
-    path_source_common = Path('vanilla_biome/1_19_4_overworld')
+    path_source_common = Path('vanilla_biomes/1_19_4_overworld')
     path_target_common = patch_path.parent / 'worldgen' / 'biome'
     
     process_files = []
@@ -69,7 +69,7 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
         process_files.append(('COMMON', path_source_common / f'{biome_name}.json', path_target_common / f'{biome_name}.json'))
 
     process_files.append(('COMMON',
-                          Path('vanilla_biome/1_20_overworld/cherry_grove.json'),
+                          Path('vanilla_biomes/1_20_overworld/cherry_grove.json'),
                           path_target_common / 'cherry_grove.json'))
 
     return process_files
