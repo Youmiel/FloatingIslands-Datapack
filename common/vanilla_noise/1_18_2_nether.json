@@ -5,7 +5,10 @@
   "sea_level": 32,
   "disable_mob_generation": false,
   "default_fluid": {
-    "Name": "minecraft:air"
+    "Properties": {
+      "level": "0"
+    },
+    "Name": "minecraft:lava"
   },
   "noise_router": {
     "final_density": {
@@ -14,7 +17,7 @@
         "argument2": {
           "argument": {
             "argument": {
-              "argument": "minecraft:end/sloped_cheese",
+              "argument": "minecraft:overworld/sloped_cheese",
               "type": "minecraft:slide"
             },
             "type": "minecraft:blend_density"
@@ -704,29 +707,29 @@
   },
   "noise": {
     "bottom_slide": {
-      "target": -0.234375,
-      "size": 7,
-      "offset": 1
+      "target": 2.5,
+      "size": 4,
+      "offset": -1
     },
-    "size_horizontal": 2,
-    "size_vertical": 1,
+    "size_horizontal": 1,
+    "size_vertical": 2,
     "terrain_shaper": {
       "offset": 0.0,
-      "factor": 1.0,
+      "factor": 0.0,
       "jaggedness": 0.0
     },
     "min_y": 0,
     "height": 128,
     "sampling": {
-      "xz_scale": 2.0,
-      "y_scale": 1.0,
+      "xz_scale": 1.0,
+      "y_scale": 3.0,
       "xz_factor": 80.0,
-      "y_factor": 160.0
+      "y_factor": 60.0
     },
     "top_slide": {
-      "target": -23.4375,
-      "size": 64,
-      "offset": -46
+      "target": 0.9375,
+      "size": 3,
+      "offset": 0
     }
   },
   "default_block": {

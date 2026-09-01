@@ -4,15 +4,18 @@
     "Name": "minecraft:netherrack"
   },
   "default_fluid": {
-    "Name": "minecraft:air"
+    "Name": "minecraft:lava",
+    "Properties": {
+      "level": "0"
+    }
   },
   "disable_mob_generation": false,
   "legacy_random_source": true,
   "noise": {
     "height": 128,
     "min_y": 0,
-    "size_horizontal": 2,
-    "size_vertical": 1
+    "size_horizontal": 1,
+    "size_vertical": 2
   },
   "noise_router": {
     "barrier": 0.0,
@@ -30,35 +33,35 @@
             "type": "minecraft:blend_density",
             "argument": {
               "type": "minecraft:add",
-              "argument1": -0.234375,
+              "argument1": 2.5,
               "argument2": {
                 "type": "minecraft:mul",
                 "argument1": {
                   "type": "minecraft:y_clamped_gradient",
                   "from_value": 0.0,
-                  "from_y": 4,
+                  "from_y": -8,
                   "to_value": 1.0,
-                  "to_y": 32
+                  "to_y": 24
                 },
                 "argument2": {
                   "type": "minecraft:add",
-                  "argument1": 0.234375,
+                  "argument1": -2.5,
                   "argument2": {
                     "type": "minecraft:add",
-                    "argument1": -23.4375,
+                    "argument1": 0.9375,
                     "argument2": {
                       "type": "minecraft:mul",
                       "argument1": {
                         "type": "minecraft:y_clamped_gradient",
                         "from_value": 1.0,
-                        "from_y": 56,
+                        "from_y": 104,
                         "to_value": 0.0,
-                        "to_y": 312
+                        "to_y": 128
                       },
                       "argument2": {
                         "type": "minecraft:add",
-                        "argument1": 23.4375,
-                        "argument2": "minecraft:end/sloped_cheese"
+                        "argument1": -0.9375,
+                        "argument2": "minecraft:nether/base_3d_noise"
                       }
                     }
                   }
@@ -71,52 +74,7 @@
     },
     "fluid_level_floodedness": 0.0,
     "fluid_level_spread": 0.0,
-    "initial_density_without_jaggedness": {
-      "type": "minecraft:add",
-      "argument1": -0.234375,
-      "argument2": {
-        "type": "minecraft:mul",
-        "argument1": {
-          "type": "minecraft:y_clamped_gradient",
-          "from_value": 0.0,
-          "from_y": 4,
-          "to_value": 1.0,
-          "to_y": 32
-        },
-        "argument2": {
-          "type": "minecraft:add",
-          "argument1": 0.234375,
-          "argument2": {
-            "type": "minecraft:add",
-            "argument1": -23.4375,
-            "argument2": {
-              "type": "minecraft:mul",
-              "argument1": {
-                "type": "minecraft:y_clamped_gradient",
-                "from_value": 1.0,
-                "from_y": 56,
-                "to_value": 0.0,
-                "to_y": 312
-              },
-              "argument2": {
-                "type": "minecraft:add",
-                "argument1": 23.4375,
-                "argument2": {
-                  "type": "minecraft:add",
-                  "argument1": -0.703125,
-                  "argument2": {
-                    "type": "minecraft:cache_2d",
-                    "argument": {
-                      "type": "minecraft:end_islands"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
+    "initial_density_without_jaggedness": 0.0,
     "lava": 0.0,
     "ridges": 0.0,
     "temperature": {

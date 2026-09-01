@@ -7,7 +7,7 @@ TYPE = 'json'
 def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
         -> ty.Union[ty.Tuple[str, Path, Path], ty.List[ty.Tuple[str, Path, Path]], None]:
 
-    path_source = Path('vanilla_noise/1_16_floating_islands.json')
+    path_source = Path('vanilla_noise/1_17_floating_islands.json')
     path_target_common = patch_path.parent / 'worldgen' / 'noise_settings'
 
     return [
@@ -19,6 +19,7 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
 def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple[Path, ty.Dict]]:
     for path, data in content:
         data['default_fluid'] = {'Name': 'minecraft:air'}
+        data['sea_level'] = 32
         
         data['noise'].pop('island_noise_override', None)
         data['noise'] = {'island_noise_override': True, **data['noise']}
@@ -31,10 +32,8 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
 
         # dimension specific settings
         if path.stem == 'overworld':
-            data['sea_level'] = 0
             data['default_block']['Name'] = 'minecraft:stone'
         elif path.stem == 'nether':
-            data['sea_level'] = 32
             data['default_block']['Name'] = 'minecraft:netherrack'
             data['structures'].pop('stronghold', None)
             data['structures']['structures']['minecraft:ruined_portal']['separation'] = 10

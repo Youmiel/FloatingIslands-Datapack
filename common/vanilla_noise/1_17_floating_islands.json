@@ -10,11 +10,11 @@
     "Properties": {
       "level": "0"
     },
-    "Name": "minecraft:air"
+    "Name": "minecraft:water"
   },
   "bedrock_roof_position": -2147483648,
   "bedrock_floor_position": -2147483648,
-  "sea_level": 32,
+  "sea_level": 0,
   "structures": {
     "stronghold": {
       "distance": 32,
@@ -116,14 +116,13 @@
   },
   "noise": {
     "simplex_surface_noise": true,
-    "island_noise_override": true,
     "size_vertical": 1,
-    "density_factor": 0.1,
+    "density_factor": 0.0,
     "density_offset": 0.0,
     "top_slide": {
-      "target": -800,
-      "size": 32,
-      "offset": -14
+      "target": -3000,
+      "size": 64,
+      "offset": -46
     },
     "bottom_slide": {
       "target": -30,
