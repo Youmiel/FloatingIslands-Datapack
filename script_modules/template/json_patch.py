@@ -27,13 +27,14 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
     file_name = patch_path.with_suffix('').with_name(patch_path.stem.replace('___','.'))
 
     # reference to single file, MC_1_16_X is a constant defined in 'build_settings.py'
-    return ('MC_1_16_X', file_name, file_name)
+    return ('MC_1_16_X', Path('built/result.json'), Path('relative/target.json'))
 
-    # reference to a non-patch file in current version
-    return ('MC_0', Path(patch_version_config['path']) / 'some/path.json', file_name)
+    # reference to a non-patch (static) file in current version
+    return ('MC_0', Path('relative/static.json'), Path('relative/target.json'))
 
-    # reference to arbitary file
-    return (None, Path('some/random/path.json'), file_name)
+    # reference to an arbitrary file, resolved as-is (absolute, or relative to the
+    # project root since build.py runs from there)
+    return (None, Path('some/random/path.json'), Path('some/target/path.json'))
 
     # reference to multi file
     if patch_path.stem.endswith('___multi'):

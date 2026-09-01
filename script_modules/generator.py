@@ -13,7 +13,7 @@ from script_modules.resource_locator import VersionResourceManager
 
 def get_source_full_path(key: str, relative_source: Path, res_manager: VersionResourceManager):
     if key is None:
-        return None
+        return Path(relative_source)
     elif key == 'COMMON':
         return res_manager.get_common_source_path(relative_source)
     else:
@@ -47,8 +47,6 @@ def scan_sources(res_manager: VersionResourceManager, exclude_file_list: ty.List
 
 
 def collect_json(version_key: str, source: Path, patch_module: ModuleType, res_manager: VersionResourceManager):
-    if version_key is None:
-        return
     source_full_path = get_source_full_path(version_key, source, res_manager)
     charset = io_util.get_charset(source_full_path)
     return io_util.read_json_dict(source_full_path, charset)
