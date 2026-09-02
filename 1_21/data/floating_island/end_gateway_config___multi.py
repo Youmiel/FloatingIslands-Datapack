@@ -15,10 +15,10 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
     path_placed_warped = common_path / 'placed_feature' / 'end_gateway_return_warped.json'
     
     return [
-        ('MC_1_19_3', path_portal_feature, path_portal_feature),
-        ('MC_1_19_3', path_placed_nether, path_placed_nether),
-        ('MC_1_19_3', path_placed_overworld, path_placed_overworld),
-        ('MC_1_19_3', path_placed_warped, path_placed_warped)
+        ('MC_1_20_5', path_portal_feature, path_portal_feature),
+        ('MC_1_20_5', path_placed_nether, path_placed_nether),
+        ('MC_1_20_5', path_placed_overworld, path_placed_overworld),
+        ('MC_1_20_5', path_placed_warped, path_placed_warped)
     ]
 
 

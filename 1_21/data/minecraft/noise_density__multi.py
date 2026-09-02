@@ -15,10 +15,10 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
     path_nether_noise = noise_settings_path / 'nether.json'
 
     return [
-        ('MC_1_19_3', path_noise_override, path_noise_override),
-        ('MC_1_19_3', path_sloped_override, path_sloped_override),
-        ('MC_1_19_3', path_overworld_noise, path_overworld_noise),
-        ('MC_1_19_3', path_nether_noise, path_nether_noise)
+        ('MC_1_19', path_noise_override, path_noise_override),
+        ('MC_1_19', path_sloped_override, path_sloped_override),
+        ('MC_1_19', path_overworld_noise, path_overworld_noise),
+        ('MC_1_19', path_nether_noise, path_nether_noise)
     ]
 
 
