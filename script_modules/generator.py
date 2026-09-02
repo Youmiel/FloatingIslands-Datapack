@@ -66,6 +66,9 @@ def patch_json(rel_patch_path: Path, patch_module: ModuleType, res_manager: Vers
     for version_key, relative_source, target_path_o in file_ref:
         # to detect path type, we must get full path 
         source_full_path = get_source_full_path(version_key, relative_source, res_manager)
+        if not source_full_path.exists():
+            print(f'    Source file {source_full_path} not found, skip.', file=sys.stderr)
+            continue
         if source_full_path.is_file():
             content_list.append(
                 (target_path_o, collect_json(version_key, relative_source, patch_module, res_manager)))
