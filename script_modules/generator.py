@@ -43,7 +43,7 @@ def scan_sources(res_manager: VersionResourceManager, exclude_file_list: ty.List
             static_file_list.append(filename)
         else:
             pass
-    return (static_file_list, patch_file_list)
+    return (sorted(static_file_list), sorted(patch_file_list))
 
 
 def collect_json(version_key: str, source: Path, patch_module: ModuleType, res_manager: VersionResourceManager):

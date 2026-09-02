@@ -4,7 +4,17 @@ import typing as ty
 TYPE = 'json'
 
 PACK_FORMAT = 16
-SUPPORTED = {"min_inclusive": 16, "max_inclusive": 26}
+SUPPORTED = { "min_inclusive": 16, "max_inclusive": 41 }
+# SUPPORTED = { "min_inclusive": 16, "max_inclusive": 27 }
+# 23w31a ~ 24w03a ~ 24w18a (exclusive)
+
+OVERLAYS = [
+    {
+        "directory": "1_20_5",
+        "formats": { "min_inclusive": 28, "max_inclusive": 41 },
+        # 24w03a ~ 24w18a (exclusive)
+    },
+]
 
 version_cache = '0.0.0'
 
@@ -20,6 +30,7 @@ def process_single(content: ty.Tuple[Path, ty.Dict]) -> ty.Tuple[Path, ty.Dict]:
     new_path, json_content = content
     json_content['pack']['pack_format'] = PACK_FORMAT
     json_content['pack']['supported_formats'] = SUPPORTED
+    json_content['overlays'] = { 'entries': OVERLAYS }
     json_content['pack']['version'] = version_cache
     return (new_path, json_content)
 
