@@ -14,7 +14,8 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
         ('COMMON', path_source_common / '1_21_9_end.json', path_target_common / 'end_1.json'),
         ('COMMON', path_source_common / '1_21_9_end.json', path_target_common / 'end_2.json'),
         ('COMMON', path_source_common / '1_21_9_overworld.json', path_target_common / 'overworld.json'),
-        ('COMMON', path_source_common / '1_21_9_nether.json', path_target_common / 'nether.json')
+        ('COMMON', path_source_common / '26_1_nether.json', path_target_common / 'nether.json')
+        # only nether has changes
     ]
 
 
