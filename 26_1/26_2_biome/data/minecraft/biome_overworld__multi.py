@@ -17,3 +17,8 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
     for path, data in content_map.items():
         data['features'][4].append('floating_island:end_gateway_return_overworld')
     return [(path, data) for path, data in content_map.items()]
+
+def process_single(content: ty.Tuple[Path, ty.Dict]) -> ty.Tuple[Path, ty.Dict]:
+    new_path, json_content = content
+    json_content['features'][4].append('floating_island:end_gateway_return_overworld')
+    return (new_path, json_content)
