@@ -3,6 +3,7 @@ import typing as ty
 
 TYPE = 'json'
 
+PACK_FORMAT = 71
 SUPPORTED = { "min_inclusive": 42, "max_inclusive": 81 }
 # 24w18a ~ 24w33a ~ 24w44a ~ 1.21.8 
 
@@ -14,8 +15,8 @@ OVERLAYS = [
     },
     {
         'directory': '1_21_4',
-        'formats': { 'min_inclusive': 58, 'max_inclusive': 64 },
-        # 24w44a ~ 25w05a (exclusive)
+        'formats': { 'min_inclusive': 58, 'max_inclusive': 81 },
+        # 24w44a ~ 25w05a (exclusive) + 1.21.5 range
     },
     {
         'directory': '1_21_5',
@@ -36,7 +37,7 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
 
 def process_single(content: ty.Tuple[Path, ty.Dict]) -> ty.Tuple[Path, ty.Dict]:
     new_path, json_content = content
-    json_content['pack'].pop('pack_format')
+    json_content['pack']['pack_format'] = PACK_FORMAT
     json_content['pack']['supported_formats'] = SUPPORTED
     json_content['overlays'] = { 'entries': OVERLAYS }
     json_content['pack']['version'] = version_cache
