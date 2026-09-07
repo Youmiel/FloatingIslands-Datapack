@@ -18,18 +18,10 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
 
 def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple[Path, ty.Dict]]:
     for path, data in content:
-        data['legacy_random_source'] = False                                # TODO: should nether be true?
         data['default_fluid'] = {'Name': 'minecraft:air'}
         
         data['noise'].pop('island_noise_override', None)
         data['noise'] = {'island_noise_override': True, **data['noise']}
-        data['noise']['sampling'] = {
-            # TODO: in 1.16/1.17/1.18.2, nether sampling scales are xz_scale = 2, y_scale = 1, not sure whether they should be the same
-            'xz_scale': 4.0,
-            'y_scale': 2.0,
-            'xz_factor': 80.0,
-            'y_factor': 160.0,
-        }
         data['noise']['top_slide'] = {
             'target': -23.4375,
             'size': 64,
@@ -43,6 +35,7 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
 
         # dimension specific settings
         if path.stem == 'overworld':
+            data['legacy_random_source'] = True                             
             data['default_block']['Name'] = 'minecraft:stone'
             data['noise']['size_horizontal'] = 2
             data['noise']['size_vertical'] = 2
@@ -53,14 +46,30 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
             data['noise']['bottom_slide']['size'] = 14
             data['noise']['bottom_slide']['offset'] = -2
 
+            data['noise']['sampling'] = {
+                'xz_scale': 4.0,
+                'y_scale': 2.0,
+                'xz_factor': 80.0,
+                'y_factor': 160.0,
+            }
+
             data['noise_caves_enabled'] = True
             data['noodle_caves_enabled'] = True
             data['ore_veins_enabled'] =True
             data['sea_level'] = 63
         elif path.stem == 'nether':
+            data['legacy_random_source'] = False                             
             data['default_block']['Name'] = 'minecraft:netherrack'
             data['noise']['size_horizontal'] = 2
             data['noise']['size_vertical'] = 1
+
+            data['noise']['sampling'] = {
+                'xz_scale': 2.0,
+                'y_scale': 1.0,
+                'xz_factor': 80.0,
+                'y_factor': 160.0,
+            }
+
         else:
             pass
     return content
