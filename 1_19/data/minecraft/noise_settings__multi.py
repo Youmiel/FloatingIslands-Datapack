@@ -38,12 +38,15 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
 
         # dimension specific settings
         if path.stem == 'overworld':
-            end_initial_density = end_1['noise_router']['initial_density_without_jaggedness']
-            end_initial_density['argument2']['argument1']['from_y'] = -64
-            end_initial_density['argument2']['argument1']['to_y'] = 48
-            end_initial_density['argument2']['argument2']['argument2']['argument2']['argument1']['from_y'] = 56
-            end_initial_density['argument2']['argument2']['argument2']['argument2']['argument1']['to_y'] = 568
-            data['noise_router']['initial_density_without_jaggedness'] = end_initial_density
+            # remove `initial_density_without_jaggedness` seems has no effect, but in 1.21.9+ Mojang has set this 
+            # to 0.0 in end dimension, so maybe it is better to not change it
+            
+            # end_initial_density = end_1['noise_router']['initial_density_without_jaggedness']
+            # end_initial_density['argument2']['argument1']['from_y'] = -64
+            # end_initial_density['argument2']['argument1']['to_y'] = 48
+            # end_initial_density['argument2']['argument2']['argument2']['argument2']['argument1']['from_y'] = 56
+            # end_initial_density['argument2']['argument2']['argument2']['argument2']['argument1']['to_y'] = 568
+            # data['noise_router']['initial_density_without_jaggedness'] = end_initial_density
 
             end_final_density = end_1['noise_router']['final_density']
             end_final_density['argument']['argument2']['argument']['argument']['argument2']['argument1']['from_y'] = -64
@@ -52,6 +55,31 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
             end_final_density['argument']['argument2']['argument']['argument']['argument2']['argument2']['argument2']['argument2']['argument1']['to_y'] = 568
             end_final_density['argument']['argument2']['argument']['argument']['argument2']['argument2']['argument2']['argument2']['argument2']['argument2'] = 'minecraft:overworld/sloped_cheese_override'
             data['noise_router']['final_density'] = end_final_density
+
+            # # seems useless
+            # final_density = data['noise_router']['final_density']
+            # # bottom slide +
+            # bottom_target = -0.234375
+            # bottom_slide = final_density['argument1']['argument']['argument2']['argument']['argument']
+            # bottom_slide['argument1'] = bottom_target
+            # bottom_slide['argument2']['argument1']['from_y'] = -64
+            # bottom_slide['argument2']['argument1']['to_y'] = 48
+            # bottom_slide['argument2']['argument2']['argument1'] = -bottom_target
+
+            # # top slide - 
+            # top_target = -23.4375
+            # top_slide = bottom_slide['argument2']['argument2']['argument2']
+            # top_slide['argument1'] = top_target
+            # top_slide['argument2']['argument1']['from_y'] = 56
+            # top_slide['argument2']['argument1']['to_y'] = 568
+            # top_slide['argument2']['argument2']['argument1'] = -top_target 
+
+            # # slope
+            # slope = top_slide['argument2']['argument2']['argument2']
+            # slope['input'] = 'minecraft:overworld/sloped_cheese_override'
+            # slope['when_in_range']['argument1'] = 'minecraft:overworld/sloped_cheese_override'
+
+            # data['noise_router']['final_density'] = final_density
 
             data['surface_rule']['sequence'][0]['if_true']['true_at_and_below']['above_bottom'] = -16
             data['surface_rule']['sequence'][0]['if_true']['false_at_and_above']['above_bottom'] = -11
@@ -65,11 +93,12 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
 
             data['spawn_target'] = []
         elif path.stem == 'nether':
-            end_initial_density = end_2['noise_router']['initial_density_without_jaggedness']
-            data['noise_router']['initial_density_without_jaggedness'] = end_initial_density
+            # same as above
+            # end_initial_density = end_2['noise_router']['initial_density_without_jaggedness']
+            # data['noise_router']['initial_density_without_jaggedness'] = end_initial_density
 
-            end_final_density = end_2['noise_router']['final_density']
-            data['noise_router']['final_density'] = end_final_density
+            final_density = end_2['noise_router']['final_density']
+            data['noise_router']['final_density'] = final_density
 
             data['noise']['size_horizontal'] = 2
             data['noise']['size_vertical'] = 1

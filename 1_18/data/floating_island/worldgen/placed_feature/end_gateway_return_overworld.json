@@ -2,15 +2,15 @@
     "feature": "floating_island:end_gateway_return_0_0",
     "placement": [
         {
-            "type": "minecraft:rarity_filter",
-            "chance": 150
+            "chance": 150,
+            "type": "minecraft:rarity_filter"
         },
         {
             "type": "minecraft:in_square"
         },
         {
-            "type": "minecraft:heightmap",
-            "heightmap": "MOTION_BLOCKING"
+            "heightmap": "MOTION_BLOCKING",
+            "type": "minecraft:heightmap"
         },
         {
             "xz_spread": 0,
