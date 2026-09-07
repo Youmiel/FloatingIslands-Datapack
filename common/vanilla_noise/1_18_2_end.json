@@ -1,0 +1,84 @@
+{
+  "aquifers_enabled": false,
+  "ore_veins_enabled": false,
+  "legacy_random_source": true,
+  "sea_level": 0,
+  "disable_mob_generation": true,
+  "default_fluid": {
+    "Name": "minecraft:air"
+  },
+  "noise_router": {
+    "final_density": {
+      "argument": {
+        "argument1": 0.64,
+        "argument2": {
+          "argument": {
+            "argument": {
+              "argument": "minecraft:end/sloped_cheese",
+              "type": "minecraft:slide"
+            },
+            "type": "minecraft:blend_density"
+          },
+          "type": "minecraft:interpolated"
+        },
+        "type": "minecraft:mul"
+      },
+      "type": "minecraft:squeeze"
+    },
+    "vein_toggle": 0.0,
+    "vein_ridged": 0.0,
+    "vein_gap": 0.0,
+    "erosion": 0.0,
+    "depth": 0.0,
+    "ridges": 0.0,
+    "initial_density_without_jaggedness": {
+      "argument": {
+        "type": "minecraft:end_islands"
+      },
+      "type": "minecraft:cache_2d"
+    },
+    "lava": 0.0,
+    "temperature": 0.0,
+    "vegetation": 0.0,
+    "continents": 0.0,
+    "barrier": 0.0,
+    "fluid_level_floodedness": 0.0,
+    "fluid_level_spread": 0.0
+  },
+  "surface_rule": {
+    "result_state": {
+      "Name": "minecraft:end_stone"
+    },
+    "type": "minecraft:block"
+  },
+  "noise": {
+    "bottom_slide": {
+      "target": -0.234375,
+      "size": 7,
+      "offset": 1
+    },
+    "size_horizontal": 2,
+    "size_vertical": 1,
+    "terrain_shaper": {
+      "offset": 0.0,
+      "factor": 1.0,
+      "jaggedness": 0.0
+    },
+    "min_y": 0,
+    "height": 128,
+    "sampling": {
+      "xz_scale": 2.0,
+      "y_scale": 1.0,
+      "xz_factor": 80.0,
+      "y_factor": 160.0
+    },
+    "top_slide": {
+      "target": -23.4375,
+      "size": 64,
+      "offset": -46
+    }
+  },
+  "default_block": {
+    "Name": "minecraft:end_stone"
+  }
+}
