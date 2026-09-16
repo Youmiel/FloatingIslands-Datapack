@@ -9,7 +9,7 @@ EXCLUDE_FILE = ['spyglass.json']
 # relative to version source root
 
 
-PROJECT_VERSION = '3.7.0'
+PROJECT_VERSION = '3.7.1'
 
 # The namings: use the first supported MC version as version name, to easily maintain version compatibility
 # i.e. when a new MC version is released and be compatible with the previous pack version, the source code does not need to be renamed.
