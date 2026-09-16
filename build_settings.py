@@ -8,21 +8,24 @@ EXTRA_FILE = ['README.md', 'LICENSE']
 EXCLUDE_FILE = ['spyglass.json'] 
 # relative to version source root
 
-# The namings: use the first supported MC version as version name, to easily maintaining version compatibility
+
+PROJECT_VERSION = '3.7.0'
+
+# The namings: use the first supported MC version as version name, to easily maintain version compatibility
 # i.e. when a new MC version is released and be compatible with the previous pack version, the source code does not need to be renamed.
 
-MC_1_16_X = {'path': '1_16_x/', 'name': 'EndLikeFloatingIslands-Datapack_1.16.x_v{version}', 'version': '3.6.1'}
-MC_1_17_X = {'path': '1_17_x/', 'name': 'EndLikeFloatingIslands-Datapack_1.17.x_v{version}', 'version': '3.6.1'}
-MC_1_18 = {'path': '1_18/', 'name': 'EndLikeFloatingIslands-Datapack_1.18_v{version}', 'version': '3.6.1'}
-MC_1_18_2 = {'path': '1_18_2/', 'name': 'EndLikeFloatingIslands-Datapack_1.18.2_v{version}', 'version': '3.6.1'}
-MC_1_19 = {'path': '1_19/', 'name': 'EndLikeFloatingIslands-Datapack_1.19_v{version}', 'version': '3.6.1'}
-MC_1_19_4 = {'path': '1_19_4/', 'name': 'EndLikeFloatingIslands-Datapack_1.19.4_v{version}', 'version': '3.6.1'}
-MC_1_20 = {'path': '1_20/', 'name': 'EndLikeFloatingIslands-Datapack_1.20_v{version}', 'version': '3.6.1'}
-MC_1_20_2 = {'path': '1_20_2/', 'name': 'EndLikeFloatingIslands-Datapack_1.20.2_v{version}', 'version': '3.6.1'}
-# MC_1_20_5 = {'path': '1_20_5/', 'name': 'EndLikeFloatingIslands-Datapack_1.20.5_v{version}', 'version': '3.6.1'}
-MC_1_21 = {'path': '1_21/', 'name': 'EndLikeFloatingIslands-Datapack_1.21_v{version}', 'version': '3.6.1'}
-MC_1_21_9 = {'path': '1_21_9/', 'name': 'EndLikeFloatingIslands-Datapack_1.21.9_v{version}', 'version': '3.6.1'}
-MC_26_1 = {'path': '26_1/', 'name': 'EndLikeFloatingIslands-Datapack_26.1_v{version}', 'version': '3.6.1'}
+MC_1_16_X = {'path': '1_16_x/', 'name': 'EndLikeFloatingIslands-Datapack_1.16.x_v{version}', 'version': PROJECT_VERSION}
+MC_1_17_X = {'path': '1_17_x/', 'name': 'EndLikeFloatingIslands-Datapack_1.17.x_v{version}', 'version': PROJECT_VERSION}
+MC_1_18 = {'path': '1_18/', 'name': 'EndLikeFloatingIslands-Datapack_1.18_v{version}', 'version': PROJECT_VERSION}
+MC_1_18_2 = {'path': '1_18_2/', 'name': 'EndLikeFloatingIslands-Datapack_1.18.2_v{version}', 'version': PROJECT_VERSION}
+MC_1_19 = {'path': '1_19/', 'name': 'EndLikeFloatingIslands-Datapack_1.19_v{version}', 'version': PROJECT_VERSION}
+MC_1_19_4 = {'path': '1_19_4/', 'name': 'EndLikeFloatingIslands-Datapack_1.19.4_v{version}', 'version': PROJECT_VERSION}
+MC_1_20 = {'path': '1_20/', 'name': 'EndLikeFloatingIslands-Datapack_1.20_v{version}', 'version': PROJECT_VERSION}
+MC_1_20_2 = {'path': '1_20_2/', 'name': 'EndLikeFloatingIslands-Datapack_1.20.2_v{version}', 'version': PROJECT_VERSION}
+# MC_1_20_5 = {'path': '1_20_5/', 'name': 'EndLikeFloatingIslands-Datapack_1.20.5_v{version}', 'version': PROJECT_VERSION}
+MC_1_21 = {'path': '1_21/', 'name': 'EndLikeFloatingIslands-Datapack_1.21_v{version}', 'version': PROJECT_VERSION}
+MC_1_21_9 = {'path': '1_21_9/', 'name': 'EndLikeFloatingIslands-Datapack_1.21.9_v{version}', 'version': PROJECT_VERSION}
+MC_26_1 = {'path': '26_1/', 'name': 'EndLikeFloatingIslands-Datapack_26.1_v{version}', 'version': PROJECT_VERSION}
 
 
 def __collect_constant() -> dict:

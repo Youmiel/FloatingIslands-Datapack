@@ -33,7 +33,7 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
             end_2 = data
 
     for path, data in modified_content:
-        data['default_fluid'] =  'minecraft:air'    # TODO: test if this is necessary since aquifers are removed
+        data['default_fluid'] =  'minecraft:air' 
 
         # dimension specific settings
         if path.stem == 'overworld':
