@@ -51,7 +51,7 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
             end_final_density['argument']['argument2']['argument']['argument']['argument2']['argument1']['to_y'] = 48
             end_final_density['argument']['argument2']['argument']['argument']['argument2']['argument2']['argument2']['argument2']['argument1']['from_y'] = 56
             end_final_density['argument']['argument2']['argument']['argument']['argument2']['argument2']['argument2']['argument2']['argument1']['to_y'] = 568
-            end_final_density['argument']['argument2']['argument']['argument']['argument2']['argument2']['argument2']['argument2']['argument2']['argument2'] = 'minecraft:overworld/sloped_cheese_override'
+            end_final_density['argument']['argument2']['argument']['argument']['argument2']['argument2']['argument2']['argument2']['argument2']['argument2'] = 'floating_island:overworld/sloped_cheese'
             data['noise_router']['final_density'] = end_final_density
 
             data['surface_rule']['sequence'][0]['if_true']['true_at_and_below']['above_bottom'] = -16

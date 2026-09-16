@@ -3,18 +3,23 @@ import typing as ty
 
 TYPE = 'json'
 
-FORMAT_RANGE = { "min_format": [100, 0], "max_format": [107, 1] }
-# 26.1 snapshot-11 ~ 26.2 snapshot-3, 26.2 snapshot-5 ~ ? (26.2)
+FORMAT_RANGE = { "min_format": [100, 0], "max_format": [121, 0] }
+# 26.1 snapshot-11 ~ 26.2 snapshot-3, 26.2 snapshot-5 ~ 26.2, 26.3-pre-1 ~ ? (26.3)
 OVERLAYS = [
     {
-        'directory': '26_2_biome',    # 26.2 snapshot-3 ~ ? (26.2) 
+        'directory': '26_2_biome',    # 26.2 snapshot-3 ~ 26.2
         'min_format': [102, 0],
         'max_format': [107, 1]
     },
     {
-        'directory': '26_2_noise',    # 26.2 snapshot-5 ~ ? (26.2)
+        'directory': '26_2_noise',    # 26.2 snapshot-5 ~ 26.2
         'min_format': [104, 0],
         'max_format': [107, 1]
+    },
+    {
+        'directory': '26_3',    # 26.3-pre-1 ~ ? (26.3)
+        'min_format': [119, 0],
+        'max_format': [121, 0]
     },
 ]
 

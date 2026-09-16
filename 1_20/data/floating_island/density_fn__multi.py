@@ -8,8 +8,8 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
 
     density_fn_path = patch_path.parent / 'worldgen' / 'density_function' / 'overworld'
     
-    path_noise_override = density_fn_path / 'base_3d_noise_override.json'
-    path_sloped_override = density_fn_path / 'sloped_cheese_override.json'
+    path_noise_override = density_fn_path / 'base_3d_noise.json'
+    path_sloped_override = density_fn_path / 'sloped_cheese.json'
 
     return [
         ('MC_1_19', path_noise_override, path_noise_override),

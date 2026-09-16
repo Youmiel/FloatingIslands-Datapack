@@ -14,7 +14,7 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
         ('COMMON', path_source_common / '26_2_end.json', path_target_common / 'end_1.json'),
         ('COMMON', path_source_common / '26_2_end.json', path_target_common / 'end_2.json'),
         ('COMMON', path_source_common / '26_2_overworld.json', path_target_common / 'overworld.json'),
-        ('COMMON', path_source_common / '26_2_nether.json', path_target_common / 'nether.json')
+        ('COMMON', path_source_common / '26_2_nether.json', path_target_common / 'nether.json'),
         # only nether has changes
     ]
 
@@ -52,7 +52,7 @@ def process_multi(content: ty.List[ty.Tuple[Path, ty.Dict]]) -> ty.List[ty.Tuple
             end_final_density['argument']['argument']['argument2']['argument']['argument2']['argument1']['to_y'] = 48
             end_final_density['argument']['argument']['argument2']['argument']['argument2']['argument2']['argument2']['argument2']['argument1']['from_y'] = 56
             end_final_density['argument']['argument']['argument2']['argument']['argument2']['argument2']['argument2']['argument2']['argument1']['to_y'] = 568
-            end_final_density['argument']['argument']['argument2']['argument']['argument2']['argument2']['argument2']['argument2']['argument2']['argument2'] = 'minecraft:overworld/sloped_cheese_override'
+            end_final_density['argument']['argument']['argument2']['argument']['argument2']['argument2']['argument2']['argument2']['argument2']['argument2'] = 'floating_island:overworld/sloped_cheese'
             data['noise_router']['final_density'] = end_final_density
 
             data['surface_rule']['sequence'][0]['if_true']['true_at_and_below']['above_bottom'] = -16

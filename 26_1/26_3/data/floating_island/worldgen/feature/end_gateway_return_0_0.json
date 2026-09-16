@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:end_gateway",
+  "exact": false,
+  "exit": [
+    0,
+    90,
+    0
+  ]
+}

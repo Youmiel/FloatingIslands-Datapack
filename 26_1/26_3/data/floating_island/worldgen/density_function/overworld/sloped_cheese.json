@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:add",
+  "left": "floating_island:overworld/islands",
+  "right": "floating_island:overworld/base_3d_noise"
+}
