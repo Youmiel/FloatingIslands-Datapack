@@ -9,7 +9,7 @@ def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
         (
             'COMMON', 
             Path('vanilla_noise/26_3/26_3_end_islands_density.json'), 
-            patch_path.parent / 'density_function' / 'overworld' / 'islands.json'
+            patch_path.parent / 'worldgen' /'density_function' / 'overworld' / 'islands.json'
         ),
     ]
 
