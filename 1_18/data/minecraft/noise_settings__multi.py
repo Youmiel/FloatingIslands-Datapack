@@ -7,8 +7,8 @@ TYPE = 'json'
 def reference_file(patch_path: Path, patch_version_config: ty.Dict[str, str]) \
         -> ty.Union[ty.Tuple[str, Path, Path], ty.List[ty.Tuple[str, Path, Path]], None]:
 
-    path_source_common = Path('vanilla_noise')
-    path_target_common = patch_path.parent / 'worldgen' / 'noise_settings'
+    path_source_common = Path('vanilla_noise') / '1_18'
+    path_target_common = patch_path.parent / 'worldgen' / 'noise_settings' 
 
     return [
         ('COMMON', path_source_common / '1_18_end.json', path_target_common / 'end_1.json'),
