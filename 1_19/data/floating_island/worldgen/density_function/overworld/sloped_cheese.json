@@ -3,5 +3,5 @@
   "argument1": {
     "type": "minecraft:end_islands"
   },
-  "argument2": "minecraft:overworld/base_3d_noise_override"
+  "argument2": "floating_island:overworld/base_3d_noise"
 }
