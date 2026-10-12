@@ -46,7 +46,7 @@ def scan_sources(res_manager: VersionResourceManager, exclude_file_list: ty.List
     return (sorted(static_file_list), sorted(patch_file_list))
 
 
-def collect_json(version_key: str, source: Path, patch_module: ModuleType, res_manager: VersionResourceManager):
+def collect_json(version_key: str, source: Path, patch_module: ModuleType, res_manager: VersionResourceManager) -> ty.Dict[str, ty.Any]:
     source_full_path = get_source_full_path(version_key, source, res_manager)
     charset = io_util.get_charset(source_full_path)
     return io_util.read_json_dict(source_full_path, charset)
@@ -59,8 +59,9 @@ def patch_json(rel_patch_path: Path, patch_module: ModuleType, res_manager: Vers
         file_ref = [raw_ref]
     elif isinstance(raw_ref, list): # multi-file
         file_ref = raw_ref
-    else: # None or other, ingore
-        pass
+    else:
+        print(f'    Patch {rel_patch_path} references nothing, skip.', file=sys.stderr)
+        return
 
     content_list: ty.List[ty.Tuple[Path, ty.Dict[str, ty.Any]]] = []
     for version_key, relative_source, target_path_o in file_ref:
@@ -81,6 +82,10 @@ def patch_json(rel_patch_path: Path, patch_module: ModuleType, res_manager: Vers
                         (target_file, collect_json(version_key, relative_source_file, patch_module, res_manager)))
         else: # None or other, ingore
             pass
+
+    if not content_list:
+        print(f'    No source collected for {rel_patch_path}, skip.', file=sys.stderr)
+        return
 
     modified_contents: ty.List[ty.Tuple[Path, ty.Dict]] = []
     if len(content_list) == 1:
@@ -106,10 +111,14 @@ def process_patch(source_version_root: Path, patch_strpath: str, res_manager: Ve
         print(f'    Unhandled patch {relative_patch_path}')
 
 
-def pack_zipfile(build_path: Path, result_root: Path, config: ty.Dict[str, str], extra_file_list: ty.List[str]):
+def pack_zipfile(build_path: Path, result_root: Path, config: ty.Dict[str, str], extra_file_list: ty.List[str]) -> bool:
     pack_name = config['name'].format(**config)
     pack_path = os.path.join(build_path, pack_name + '.zip')
     pack_path_temp = os.path.join(build_path, pack_name + '.zip.tmp')
+    missing_file_list = [extra_file for extra_file in extra_file_list if not os.path.exists(extra_file)]
+    if missing_file_list:
+        print(f'    Extra file(s) not found: {", ".join(missing_file_list)}', file=sys.stderr)
+        return False
     datapack_files = file_util.scan_folder(result_root)
     try:
         with zipfile.ZipFile(pack_path_temp, 'w') as pack_zip:
@@ -124,5 +133,9 @@ def pack_zipfile(build_path: Path, result_root: Path, config: ty.Dict[str, str],
                                 compresslevel=zlib.Z_DEFAULT_COMPRESSION)
         os.replace(pack_path_temp, pack_path)
         # shutil.move(pack_path_temp, pack_path)
+        return True
     except OSError as e:
         print(e, file=sys.stderr)
+        if os.path.exists(pack_path_temp):
+            os.remove(pack_path_temp)
+        return False

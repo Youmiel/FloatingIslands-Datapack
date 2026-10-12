@@ -39,7 +39,7 @@ def scan_folder(start_path: ty.Union[str, Path], max_recursion: int = 15, log: b
     '''
     args:
     - start_path: 
-    - max_recursion: 
+    - max_recursion: maximum depth of sub-directories to descend; directories deeper than this are skipped with a warning
     - log:
     - file_predicate: receives file basename, returns whether it is accepted, e.g. file_predicate('sample.txt').
     '''
@@ -51,8 +51,11 @@ def scan_folder(start_path: ty.Union[str, Path], max_recursion: int = 15, log: b
         full_path = os.path.join(start_path, sub)
         if os.path.isfile(full_path) and file_predicate(sub):
             result.append(full_path)
-        elif max_recursion != 0 and os.path.isdir(full_path):
-            result.extend(scan_folder(full_path, max_recursion - 1, log, file_predicate))
+        elif os.path.isdir(full_path):
+            if max_recursion > 0:
+                result.extend(scan_folder(full_path, max_recursion - 1, log, file_predicate))
+            else:
+                print(f'Scan depth limit reached, {full_path} is not scanned.', file=sys.stderr)
     return result
 
 

@@ -7,6 +7,7 @@
 
 from pathlib import Path
 import os
+import sys
 import typing as ty
 
 import build_settings as settings
@@ -27,7 +28,7 @@ def run(
     res_manager = VersionResourceManager(Path(build_path), Path(common_path), same_version_keyword, version_config)
 
     for v_key in version_config:
-        res_manager.set_currrent_version(v_key) 
+        res_manager.set_current_version(v_key)
 
         build_version_root = res_manager.get_current_build_version_root()
         source_version_root = res_manager.get_current_version_root()
@@ -51,7 +52,8 @@ def run(
             generator.process_patch(src_version_root, patch_strpath, res_manager)
             
         print('  Packing...')
-        generator.pack_zipfile(Path(build_path), build_version_root, res_manager.get_current_version_config(), extra_file_list)
+        if not generator.pack_zipfile(Path(build_path), build_version_root, res_manager.get_current_version_config(), extra_file_list):
+            print(f'  Packing version {v_key} failed.', file=sys.stderr)
 
 
 if __name__ == '__main__':
